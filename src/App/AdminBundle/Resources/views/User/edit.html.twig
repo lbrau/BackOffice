@@ -5,25 +5,25 @@
     
 <div class="row">
    <div class="col-lg-12">
-       <section class="panel">
-           <header class="panel-heading">
-               Édition de l'utilisateur
-           </header>
-          <div class="panel-body">
-            <form method="post" class="form-horizontal tasi-form" action="{{ path ('user_update', {'id' : entity.id}) }}">
-               {{ form(edit_form) }}
-           </div>
-            </form>
-            <ul class="record_actions">
-               <li>
-                   <a href="{{ path('user_list') }}">
-                       Back to the list
-                   </a>
-                   
-               </li>
-            </ul>
-      
-       </section>
+      <section class="panel">
+          <header class="panel-heading">
+              Édition de l'utilisateur
+          </header>
+         <div class="panel-body">
+           <form method="post" class="form-horizontal tasi-form" action="{{ path ('user_update', {'id' : entity.id}) }}">
+              {{ form(edit_form) }}
+          </div>
+           </form>
+           <ul class="record_actions">
+              <li>
+                  <a href="{{ path('user_list') }}">
+                      Back to the list
+                  </a>
+
+              </li>
+           </ul>
+
+      </section>
    </div>
 </div>
 {% endblock %}

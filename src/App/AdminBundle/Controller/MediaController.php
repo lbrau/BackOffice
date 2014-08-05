@@ -227,6 +227,31 @@ class MediaController extends Controller
 
         return $this->redirect($this->generateUrl('media'));
     }
+    
+    /**
+     * Deletes a Media entity from media list.
+     *
+     * @Route("/{iId}", name="media_delete_from_list")
+     * @Method("DELETE")
+     */
+    public function deleteMediaFormListAction($iId)
+    {
+        $form = $this->createDeleteForm($iId);
+
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $entity = $em->getRepository('AppAdminBundle:Media')->find($iId);
+
+            if (!$entity) {
+                throw $this->createNotFoundException('Unable to find Media entity.');
+            }
+
+            $em->remove($entity);
+            $em->flush();
+        }
+
+        return $this->redirect($this->generateUrl('media'));
+    }
 
     /**
      * Creates a form to delete a Media entity by id.
