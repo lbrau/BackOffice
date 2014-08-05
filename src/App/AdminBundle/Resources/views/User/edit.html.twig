@@ -11,12 +11,7 @@
            </header>
           <div class="panel-body">
             <form method="post" class="form-horizontal tasi-form" action="{{ path ('user_update', {'id' : entity.id}) }}">
-               {{ elfinder_tinymce_init() }}
-
-               {{ form_widget(edit_form.content, { 'attr': {'class': 'tinymce'} }) }}
-
                {{ form(edit_form) }}
-              <!-- Ajout script TinyMCE : en bas de page -->
            </div>
             </form>
             <ul class="record_actions">
